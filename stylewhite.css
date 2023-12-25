@@ -1,0 +1,42 @@
+:root{
+    --div-background-colour: white;
+    --text-color: black;
+}
+
+body{
+    background-color: var(--background-colour);
+    margin: 0px;
+    padding: 0px;
+    font-family: system-ui;
+    color: var(--text-color);
+}
+.hero {
+    background-color: var(--background-colour, white);
+    padding-left: 10px;
+    padding-top: 1px;
+}
+.button_add{
+    background-color: var(--button-background, #EFEFEF);
+    border-color: var(--button-border, #f0f0f0);
+    color: var(--button-text, #000000);
+}
+.button_dark{
+    background-color: var(--button-background, #EFEFEF);
+    border-color: var(--button-border, #f0f0f0);
+    color: var(--button-text, #000000);
+}
+.button_light{
+    background-color: var(--button-background, #EFEFEF);
+    border-color: var(--button-border, #f0f0f0);
+    color: var(--button-text, #000000);
+}
+.button_upgrades{
+    background-color: var(--button-background, #EFEFEF);
+    border-color: var(--button-border, #f0f0f0);
+    color: var(--button-text, #000000);
+}
+.button_RESET{
+    background-color: var(--button-background, #EFEFEF);
+    border-color: var(--button-border, #f0f0f0);
+    color: var(--button-text, #000000);
+}
