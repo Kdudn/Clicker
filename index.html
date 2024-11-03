@@ -1,175 +1,175 @@
 <!DOCTYPE html>
 
 <head>
-    <title>Generic Clicker</title>
+    <title>Clicker</title>
     <script src="https://cdn.jsdelivr.net/npm/js-cookie@beta/dist/js.cookie.min.js"></script>
     <script src="https://cdn.jsdelivr.net/gh/erosson/swarm-numberformat@v0.1.0/dist/swarm-numberformat.min.js"></script>
     <link rel="stylesheet" href="stylewhite.css">
     <script defer src="script.js"></script>
     <script>
         var clicker = {
-            generics:0,
+            clicks:0,
             upgrades: {
-                generic_farm:{
+                click_farm:{
                     amount:0,
                     cost:10,
                     gps:0.5,
                     hasun : false,
                     unlocked:0,
-                    name:"Generic Farms"
+                    name:"click Farms"
                 },
-                generic_machine:{
+                click_machine:{
                     amount:0,
                     cost:15,
                     gps:1,
                     hasun:false,
                     unlocked:13,
-                    name:"Generic Machines"
+                    name:"click Machines"
                 },
-                generic_factory:{
+                click_factory:{
                     amount:0,
                     cost:20,
                     gps:5,
                     hasun:false,
                     unlocked:17,
-                    name:"Generic Factories"
+                    name:"click Factories"
                 },
-                generic_generator:{
+                click_generator:{
                     amount:0,
                     cost:50,
                     gps:10,
                     hasun:false,
                     unlocked:38,
-                    name:"Generic Generators"
+                    name:"click Generators"
                 },
-                generic_company:{
+                click_company:{
                     amount:0,
                     cost:75,
                     gps:15,
                     hasun:false,
                     unlocked: 68,
-                    name:"Generic Companies"
+                    name:"click Companies"
                 },
-                generic_industry:{
+                click_industry:{
                     amount:0,
                     cost:100,
                     gps:20,
                     hasun:false,
                     unlocked: 87,
-                    name:"Generic Industries"
+                    name:"click Industries"
                 },
-                generic_country:{
+                click_country:{
                     amount:0,
                     cost:1000,
                     gps:50,
                     hasun:false,
                     unlocked:905,
-                    name:"Generic Countries"
+                    name:"click Countries"
                 },
-                generic_continent:{
+                click_continent:{
                     amount:0,
                     cost:5000,
                     gps:100,
                     hasun:false,
                     unlocked:4875,
-                    name:"Generic Continents"
+                    name:"click Continents"
                 },
-                generic_world:{
+                click_world:{
                     amount:0,
                     cost:7500,
                     gps:750,
                     hasun:false,
                     unlocked:6480,
-                    name:"Generic Worlds"
+                    name:"click Worlds"
                 },
-                generic_solarsystem:{
+                click_solarsystem:{
                     amount:0,
                     cost:10000,
                     gps:1500,
                     hasun:false,
                     unlocked:98800,
-                    name:"Generic Solar Systems"
+                    name:"click Solar Systems"
                 },
-                generic_galaxy:{
+                click_galaxy:{
                     amount:0,
                     cost:50000,
                     gps:5000,
                     hasun:false,
                     unlocked:47675,
-                    name:"Generic Galaxies"
+                    name:"click Galaxies"
                 },
-                generic_blackhole:{
+                click_blackhole:{
                     amount:0,
                     cost:100000,
                     gps:10000,
                     hasun:false,
                     unlocked:80765,
-                    name:"Generic Black Holes"
+                    name:"click Black Holes"
                 },
-                generic_demigod:{
+                click_demigod:{
                     amount:0,
                     cost:1000000,
                     gps:50000,
                     hasun:false,
                     unlocked:897800,
-                    name:"Generic Demigods"
+                    name:"click Demigods"
                 },
-                generic_angel:{
+                click_angel:{
                     amount:0,
                     cost:100000000,
                     gps:75000,
                     hasun:false,
                     unlocked:90000000,
-                    name:"Generic Angel"
+                    name:"click Angel"
                 },
-                generic_god:{
+                click_god:{
                     amount:0,
                     cost:500000000,
                     gps:100000,
                     hasun:false,
                     unlocked:400000000,
-                    name:"Generic Gods"
+                    name:"click Gods"
                 },
-                generic_universe:{
+                click_universe:{
                     amount:0,
                     cost:1000000000,
                     gps:250000,
                     hasun:false,
                     unlocked:900000000,
-                    name:"Generic Universes"
+                    name:"click Universes"
                 },
-                generic_paralleluniverse:{
+                click_paralleluniverse:{
                     amount:0,
                     cost:5000000000,
                     gps:500000,
                     hasun:false,
                     unlocked:2500000000,
-                    name:"Generic Parallel Universes"
+                    name:"click Parallel Universes"
                 },
-                generic_multiverse:{
+                click_multiverse:{
                     amount:0,
                     cost:50000000000,
                     gps:750000,
                     hasun:false,
                     unlocked:35000000000,
-                    name:"Generic Multiverses"
+                    name:"click Multiverses"
                 },
-                generic_internet:{
+                click_internet:{
                     amount:0,
                     cost:100000000000,
                     gps:1000000,
                     hasun:false,
                     unlocked:80000000000,
-                    name:"Generic Internet"
+                    name:"click Internet"
                 },
             },
-            achivs:[{req:"clicker.generics>0",gotten:false,text:"You got your First Generic!"},{req:"clicker.generics>9",gotten:false,text:"You got ten Generics!"},{req:"clicker.generics>49",gotten:false,text:"You got Fifty Generics!"},{req:"clicker.generics>99",gotten:false,text:"You got One Hundred Generics!"},{req:"clicker.generics>999",gotten:false,text:"You got One Thousand Generics!"},{req:"clicker.generics>4999",gotten:false,text:"You got Five Thousand Generics!"},{req:"clicker.generics>9999",gotten:false,text:"You got Ten Thousand Generics!"},{req:"clicker.generics>49999",gotten:false,text:"You got Fifty Thousand Generics!"},{req:"clicker.generics>99999",gotten:false,text:"You got One Hundred Thousand Generics!"},{req:"clicker.generics>499999",gotten:false,text:"You got Five Hundred Thousand Generics!"},{req:"clicker.generics>999999",gotten:false,text:"You got One Million Generics!"},{req:"clicker.generics>499999999",gotten:false,text:"You got Five Hundred Million Generics!"},{req:"clicker.generics>999999999",gotten:false,text:"You got One Billion Generics!"},{req:"clicker.generics>9999999999",gotten:false,text:"You got Ten Billion Generics!"},{req:"clicker.generics>49999999999",gotten:false,text:"You got Fifty Billion Generics!"},{req:"clicker.generics>99999999999",gotten:false,text:"You got One Hundred Billion Generics!"},{req:"clicker.generics>99999999999",gotten:false,text:"You Beat Generic Clicker!"}]
+            achivs:[{req:"clicker.clicks>0",gotten:false,text:"You got your First click!"},{req:"clicker.clicks>9",gotten:false,text:"You got ten clicks!"},{req:"clicker.clicks>49",gotten:false,text:"You got Fifty clicks!"},{req:"clicker.clicks>99",gotten:false,text:"You got One Hundred clicks!"},{req:"clicker.clicks>999",gotten:false,text:"You got One Thousand clicks!"},{req:"clicker.clicks>4999",gotten:false,text:"You got Five Thousand clicks!"},{req:"clicker.clicks>9999",gotten:false,text:"You got Ten Thousand clicks!"},{req:"clicker.clicks>49999",gotten:false,text:"You got Fifty Thousand clicks!"},{req:"clicker.clicks>99999",gotten:false,text:"You got One Hundred Thousand clicks!"},{req:"clicker.clicks>499999",gotten:false,text:"You got Five Hundred Thousand clicks!"},{req:"clicker.clicks>999999",gotten:false,text:"You got One Million clicks!"},{req:"clicker.clicks>499999999",gotten:false,text:"You got Five Hundred Million clicks!"},{req:"clicker.clicks>999999999",gotten:false,text:"You got One Billion clicks!"},{req:"clicker.clicks>9999999999",gotten:false,text:"You got Ten Billion clicks!"},{req:"clicker.clicks>49999999999",gotten:false,text:"You got Fifty Billion clicks!"},{req:"clicker.clicks>99999999999",gotten:false,text:"You got One Hundred Billion clicks!"},{req:"clicker.clicks>99999999999",gotten:false,text:"You Beat click Clicker!"}]
         };
         var delay=0;
         var gps = 0;
         function thing_clicked(thing){
-            if(clicker.upgrades[thing].cost <= clicker.generics){
-            clicker.generics-= clicker.upgrades[thing].cost;
+            if(clicker.upgrades[thing].cost <= clicker.clicks){
+            clicker.clicks-= clicker.upgrades[thing].cost;
             clicker.upgrades[thing].amount++;
             clicker.upgrades[thing].cost += Math.round(clicker.upgrades[thing].cost*0.15);
             update_upgrades();
@@ -182,7 +182,7 @@
                 if(clicker.upgrades[i].hasun){
                 
                 document.querySelector("#upgrades").innerHTML+= `<br> <button class="button_upgrades", onclick="thing_clicked('${i}')">${clicker.upgrades
-                [i].name}</button>Cost: ${numberformat.format(clicker.upgrades[i].cost)} Generics, GPS: ${numberformat.format (clicker.upgrades[i].gps)}, you have ${numberformat.format(clicker.upgrades[i].amount)} ${clicker.upgrades[i].name}`;
+                [i].name}</button>Cost: ${numberformat.format(clicker.upgrades[i].cost)} clicks, GPS: ${numberformat.format (clicker.upgrades[i].gps)}, you have ${numberformat.format(clicker.upgrades[i].amount)} ${clicker.upgrades[i].name}`;
                 d+= clicker.upgrades[i].gps * clicker.upgrades[i].amount
                 }
             }
@@ -210,7 +210,7 @@
             update_upgrades();
             setInterval(() => {
                 for(i in clicker.upgrades){
-                    clicker.generics += clicker.upgrades[i].amount*clicker.upgrades[i].gps/20;
+                    clicker.clicks += clicker.upgrades[i].amount*clicker.upgrades[i].gps/20;
                 }
                 for(i in clicker.achivs){
                     var b = new Function('return '+clicker.achivs[i].req);
@@ -219,9 +219,9 @@
                         document.querySelector("#achivs").innerHTML+=`<br>ACHEIVEMENT UNLOCKED<br>${clicker.achivs[i].text}`;
                     }
                 }
-                document.querySelector("#generics").innerHTML = "You have "+numberformat.format( Number (String(clicker.generics).split(".")[0]))+" generics";
+                document.querySelector("#clicks").innerHTML = "You have "+numberformat.format( Number (String(clicker.clicks).split(".")[0]))+" clicks";
                 for(i in clicker.upgrades){
-                    if(!clicker.upgrades[i].hasun && clicker.upgrades[i].unlocked <= clicker.generics){
+                    if(!clicker.upgrades[i].hasun && clicker.upgrades[i].unlocked <= clicker.clicks){
                         clicker.upgrades[i].hasun = true
                         update_upgrades()
                     }
@@ -241,67 +241,67 @@
                 document.querySelector("#achivs").innerHTML = ``
             }
 
-            clicker.generics = 0;
-            clicker.upgrades.generic_angel.amount = 0;
-            clicker.upgrades.generic_blackhole.amount =0; 
-            clicker.upgrades.generic_company.amount = 0;
-            clicker.upgrades.generic_continent.amount = 0;
-            clicker.upgrades.generic_country.amount = 0;
-            clicker.upgrades.generic_demigod.amount=0;
-            clicker.upgrades.generic_factory.amount=0;
-            clicker.upgrades.generic_farm.amount = 0;
-            clicker.upgrades.generic_galaxy.amount=0;
-            clicker.upgrades.generic_generator.amount=0;
-            clicker.upgrades.generic_god.amount=0;
-            clicker.upgrades.generic_industry.amount=0;
-            clicker.upgrades.generic_internet.amount=0;
-            clicker.upgrades.generic_machine.amount=0;
-            clicker.upgrades.generic_multiverse.amount=0;
-            clicker.upgrades.generic_solarsystem.amount=0;
-            clicker.upgrades.generic_universe.amount=0;
-            clicker.upgrades.generic_world.amount=0;
-            clicker.upgrades.generic_paralleluniverse.amount=0;
+            clicker.clicks = 0;
+            clicker.upgrades.click_angel.amount = 0;
+            clicker.upgrades.click_blackhole.amount =0; 
+            clicker.upgrades.click_company.amount = 0;
+            clicker.upgrades.click_continent.amount = 0;
+            clicker.upgrades.click_country.amount = 0;
+            clicker.upgrades.click_demigod.amount=0;
+            clicker.upgrades.click_factory.amount=0;
+            clicker.upgrades.click_farm.amount = 0;
+            clicker.upgrades.click_galaxy.amount=0;
+            clicker.upgrades.click_generator.amount=0;
+            clicker.upgrades.click_god.amount=0;
+            clicker.upgrades.click_industry.amount=0;
+            clicker.upgrades.click_internet.amount=0;
+            clicker.upgrades.click_machine.amount=0;
+            clicker.upgrades.click_multiverse.amount=0;
+            clicker.upgrades.click_solarsystem.amount=0;
+            clicker.upgrades.click_universe.amount=0;
+            clicker.upgrades.click_world.amount=0;
+            clicker.upgrades.click_paralleluniverse.amount=0;
 
             //cost
-            clicker.upgrades.generic_angel.cost = 100000000;
-            clicker.upgrades.generic_blackhole.cost =100000; 
-            clicker.upgrades.generic_company.cost = 75;
-            clicker.upgrades.generic_continent.cost = 5000;
-            clicker.upgrades.generic_country.cost = 1000;
-            clicker.upgrades.generic_demigod.cost=1000000;
-            clicker.upgrades.generic_factory.cost=20;
-            clicker.upgrades.generic_farm.cost = 10;
-            clicker.upgrades.generic_galaxy.cost=50000;
-            clicker.upgrades.generic_generator.cost=50;
-            clicker.upgrades.generic_god.cost=500000000;
-            clicker.upgrades.generic_industry.cost=100;
-            clicker.upgrades.generic_internet.cost=100000000000;
-            clicker.upgrades.generic_machine.cost=15;
-            clicker.upgrades.generic_multiverse.cost=50000000000;
-            clicker.upgrades.generic_solarsystem.cost=10000;
-            clicker.upgrades.generic_universe.cost=1000000000;
-            clicker.upgrades.generic_world.cost=7500;
-            clicker.upgrades.generic_paralleluniverse.cost=5000000000;
+            clicker.upgrades.click_angel.cost = 100000000;
+            clicker.upgrades.click_blackhole.cost =100000; 
+            clicker.upgrades.click_company.cost = 75;
+            clicker.upgrades.click_continent.cost = 5000;
+            clicker.upgrades.click_country.cost = 1000;
+            clicker.upgrades.click_demigod.cost=1000000;
+            clicker.upgrades.click_factory.cost=20;
+            clicker.upgrades.click_farm.cost = 10;
+            clicker.upgrades.click_galaxy.cost=50000;
+            clicker.upgrades.click_generator.cost=50;
+            clicker.upgrades.click_god.cost=500000000;
+            clicker.upgrades.click_industry.cost=100;
+            clicker.upgrades.click_internet.cost=100000000000;
+            clicker.upgrades.click_machine.cost=15;
+            clicker.upgrades.click_multiverse.cost=50000000000;
+            clicker.upgrades.click_solarsystem.cost=10000;
+            clicker.upgrades.click_universe.cost=1000000000;
+            clicker.upgrades.click_world.cost=7500;
+            clicker.upgrades.click_paralleluniverse.cost=5000000000;
 
             //hasun
-            clicker.upgrades.generic_angel.hasun = false;
-            clicker.upgrades.generic_blackhole.hasun =false; 
-            clicker.upgrades.generic_company.hasun = false;
-            clicker.upgrades.generic_continent.hasun = false;
-            clicker.upgrades.generic_country.hasun = false;
-            clicker.upgrades.generic_demigod.hasun=false;
-            clicker.upgrades.generic_factory.hasun=false;
-            clicker.upgrades.generic_galaxy.hasun=false;
-            clicker.upgrades.generic_generator.hasun=false;
-            clicker.upgrades.generic_god.hasun=false;
-            clicker.upgrades.generic_industry.hasun=false;
-            clicker.upgrades.generic_internet.hasun=false;
-            clicker.upgrades.generic_machine.hasun=false;
-            clicker.upgrades.generic_multiverse.hasun=false;
-            clicker.upgrades.generic_solarsystem.hasun=false;
-            clicker.upgrades.generic_universe.hasun=false;
-            clicker.upgrades.generic_world.hasun=false;
-            clicker.upgrades.generic_paralleluniverse.hasun=false;
+            clicker.upgrades.click_angel.hasun = false;
+            clicker.upgrades.click_blackhole.hasun =false; 
+            clicker.upgrades.click_company.hasun = false;
+            clicker.upgrades.click_continent.hasun = false;
+            clicker.upgrades.click_country.hasun = false;
+            clicker.upgrades.click_demigod.hasun=false;
+            clicker.upgrades.click_factory.hasun=false;
+            clicker.upgrades.click_galaxy.hasun=false;
+            clicker.upgrades.click_generator.hasun=false;
+            clicker.upgrades.click_god.hasun=false;
+            clicker.upgrades.click_industry.hasun=false;
+            clicker.upgrades.click_internet.hasun=false;
+            clicker.upgrades.click_machine.hasun=false;
+            clicker.upgrades.click_multiverse.hasun=false;
+            clicker.upgrades.click_solarsystem.hasun=false;
+            clicker.upgrades.click_universe.hasun=false;
+            clicker.upgrades.click_world.hasun=false;
+            clicker.upgrades.click_paralleluniverse.hasun=false;
 
             update_upgrades();
         }
@@ -310,10 +310,10 @@
 </head>
 <body onload="updatecount()">
     <div class="hero">
-        <h1 id="generics">You have 0 generics</h1>
+        <h1 id="clicks">You have 0 clicks</h1>
         <h2 id="GPS">Total GPS:0</h2>
-        <p>Generic Farm GPS = 0,5</p>
-        <button class="button_add", onclick="clicker.generics++">Generic Button</button>
+        <p>click Farm GPS = 0,5</p>
+        <button class="button_add", onclick="clicker.clicks++">click Button</button>
         <div id="upgrades">
     
         </div>
